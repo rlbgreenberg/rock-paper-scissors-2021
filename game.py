@@ -3,11 +3,18 @@
 import random
 
 import os
+
+
+
+PLAYER_NAME = os.getenv("PLAYER_NAME")
+print (PLAYER_NAME)
+
+
+
 from dotenv import load_dotenv
 
 load_dotenv()
 
-PLAYER_NAME = os.getenv("PLAYER_NAME", default="Player One")
 
 print("Rock, Paper, Scissors, Shoot!")
 
@@ -32,15 +39,17 @@ valid_options = ["rock", "paper", "scissors"]
 computer_choice = random.choice(valid_options)
 print("COMPUTER CHOICE: ", computer_choice)
 
-# from reid
+# adapted from reid
 if user_choice == computer_choice:
     print("It's a tie, try again!")
+
 elif (user_choice == "scissors") and (computer_choice == "paper"):
         print("Scissors cuts paper, you win!")
 elif (user_choice == "rock") and (computer_choice == "scissors"):
         print("rock smashes scissors, you win!")
 elif (user_choice == "paper") and (computer_choice == "rock"):
         print("Paper covers rock, you win!")
+
 #COMPUTER WINNING SCENARIOS
 elif (user_choice == "scissors") and (computer_choice == "rock"):
         print("rock smashes scissors, you lose!")
@@ -48,5 +57,7 @@ elif (user_choice == "rock") and (computer_choice == "paper"):
         print("paper covers rock, you lose!")
 elif (user_choice == "paper") and (computer_choice == "scissors"):
         print("Scissors cuts paper, you lose!")
+
+
 
 print ("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
