@@ -32,41 +32,21 @@ valid_options = ["rock", "paper", "scissors"]
 computer_choice = random.choice(valid_options)
 print("COMPUTER CHOICE: ", computer_choice)
 
-
-# Rock beats Scissors
-
-if (user_choice == "rock") and (computer_choice == "scissors"):
-    print("You win!")
-
-if (computer_choice == "rock") and (user_choice == "scissors"):
-    print("Oh, the computer won. It's ok!")
-
-#Paper beats Rock
-
-if (user_choice == "paper") and (computer_choice == "rock"):
-    print("You win!")
-
-if (computer_choice == "paper") and (user_choice == "rock"):
-    print("Oh, the computer won. It's ok!")
-
-# Scissors beats Paper
-
-if (user_choice == "scissors") and (computer_choice == "paper"):
-    print("You win!")
-
-if (computer_choice == "scissors") and (user_choice == "paper"):
-    print("Oh, the computer won. It's ok!")
-
-# Rock vs Rock, Paper vs Paper, and Scissors vs Scissors each results in a "tie"
-
-if (user_choice == "rock") and (computer_choice == "rock"):
-    print("It's a tie!")
-
-if (user_choice == "paper") and (computer_choice == "paper"):
-    print("It's a tie!")
-
-if (user_choice == "scissors") and (computer_choice == "scissors"):
-    print("It's a tie!")
-
+# from reid
+if user_choice == computer_choice:
+    print("It's a tie, try again!")
+elif (user_choice == "scissors") and (computer_choice == "paper"):
+        print("Scissors cuts paper, you win!")
+elif (user_choice == "rock") and (computer_choice == "scissors"):
+        print("rock smashes scissors, you win!")
+elif (user_choice == "paper") and (computer_choice == "rock"):
+        print("Paper covers rock, you win!")
+#COMPUTER WINNING SCENARIOS
+elif (user_choice == "scissors") and (computer_choice == "rock"):
+        print("rock smashes scissors, you lose!")
+elif (user_choice == "rock") and (computer_choice == "paper"):
+        print("paper covers rock, you lose!")
+elif (user_choice == "paper") and (computer_choice == "scissors"):
+        print("Scissors cuts paper, you lose!")
 
 print ("THIS IS THE END OF OUR GAME. PLEASE PLAY AGAIN.")
